@@ -7,7 +7,7 @@ function PokemonList({ pokemons }) {
     return (
         <div className='PokemonList'>
             {pokemons.map((pokemon) => {
-                return <PokemonCard name={pokemon.name} key={pokemon.name} />
+                return <PokemonCard name={pokemon.name} key={pokemon.name} image={pokemon.sprites.front_default}/>
             })}
         </div>
     );
@@ -18,3 +18,6 @@ function PokemonList({ pokemons }) {
 // }
 
 export default PokemonList
+
+//This line of code is for images without pixelated style
+// image={pokemon.sprites.other["official-artwork"].front_default} 

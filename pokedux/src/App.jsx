@@ -1,9 +1,9 @@
 import { Col } from 'antd'
 import { useEffect } from 'react'
-import Searcher from './components/searcher'
+import Searcher from './components/searcher.jsx'
 import PokemonList from './components/PokemonList'
 import logo from './assets/logo.svg'
-// import './App.css'
+import './App.css'
 import {getPokemon, getPokemonDetails } from './api'
 import { SetPokemons } from './actions/index.js';
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,14 +15,17 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchPokemons = async() => {
+    const fetchPokemons = async () => {
       const pokemonsRes = await getPokemon();
-      const pokemonsDetailed = await Promise.all(pokemonsRes.map(pokemon => getPokemonDetails(pokemon)));
+      const pokemonsDetailed = await Promise.all(
+        pokemonsRes.map((pokemon) => getPokemonDetails(pokemon))
+      );
       dispatch(SetPokemons(pokemonsDetailed));
     };
 
-      fetchPokemons();
-  }, [])
+    fetchPokemons();
+  }, []);
+
   return (
     <>
       <Col span={4} offset={10}>
