@@ -1,0 +1,32 @@
+/* .PokemonList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+} */
+
+.PokemonList{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    margin: 3rem;
+    padding: 0 3rem 3rem;
+}
+
+/* 
+@media screen and (min-width: 720px) {
+    .PokemonList {
+        grid-template-columns: repeat(2, 350px);
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    .PokemonList {
+        grid-template-columns: repeat(3, 350px);
+    }
+}
+
+@media screen and (min-width: 1680px) {
+    .PokemonList {
+        grid-template-columns: repeat(4, 350px);
+    }
+} */
